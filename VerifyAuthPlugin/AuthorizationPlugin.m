@@ -139,7 +139,9 @@ extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks *callback
     
     
     #pragma mark --StopAdminLogin
-    [StopAdminLogin runMechanism:mechanism];
+    if (mechanism->fStopAdminLogin) {
+        [StopAdminLogin runMechanism:mechanism];
+    }
     
     #pragma mark --LogHappenings
     // Placeholder for LogHappenings Mech
