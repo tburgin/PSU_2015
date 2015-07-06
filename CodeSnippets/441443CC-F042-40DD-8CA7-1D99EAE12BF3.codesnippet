@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AuthPlugin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark
+#pragma mark AuthorizationPlugin Implementation
+
+- (OSStatus) AuthorizationPluginCreate:(const AuthorizationCallbacks *)callbacks
+                             PluginRef:(AuthorizationPluginRef *)outPlugin
+                       PluginInterface:(const AuthorizationPluginInterface **)outPluginInterface {
+    
+    OSStatus        err;
+    PluginRecord *  plugin;
+    
+    assert(callbacks != NULL);
+    assert(callbacks-&gt;version &gt;= kAuthorizationCallbacksVersion);
+    assert(outPlugin != NULL);
+    assert(outPluginInterface != NULL);
+    
+    // Create the plugin.
+    err = noErr;
+    plugin = (PluginRecord *) malloc(sizeof(*plugin));
+    if (plugin == NULL) {
+        err = memFullErr;
+    }
+    
+    // Fill it in.
+    if (err == noErr) {
+        plugin-&gt;fMagic     = kPluginMagic;
+        plugin-&gt;fCallbacks = callbacks;
+    }
+    
+    *outPlugin = plugin;
+    //*outPluginInterface = &amp;gPluginInterface;
+    
+    assert( (err == noErr) == (*outPlugin != NULL) );
+    
+    return err;
+    
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>441443CC-F042-40DD-8CA7-1D99EAE12BF3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>AuthorizationPluginCreate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AuthPluginAuthorizationPluginCreate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

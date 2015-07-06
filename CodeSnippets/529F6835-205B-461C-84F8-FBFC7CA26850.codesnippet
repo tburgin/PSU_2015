@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AuthPlugin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (OSStatus) MechanismCreate:(AuthorizationPluginRef)inPlugin
+                   EngineRef:(AuthorizationEngineRef)inEngine
+                 MechanismId:(AuthorizationMechanismId)mechanismId
+                MechanismRef:(AuthorizationMechanismRef *)outMechanism {
+    
+    OSStatus            err;
+    PluginRecord *      plugin;
+    MechanismRecord *   mechanism;
+    
+    plugin = (PluginRecord *) inPlugin;
+    assert([self PluginValid:plugin]);
+    assert(inEngine != NULL);
+    assert(mechanismId != NULL);
+    assert(outMechanism != NULL);
+    
+    err = noErr;
+    mechanism = (MechanismRecord *) malloc(sizeof(*mechanism));
+    if (mechanism == NULL) {
+        err = memFullErr;
+    }
+    
+    if (err == noErr) {
+        mechanism-&gt;fMagic = kMechanismMagic;
+        mechanism-&gt;fEngine = inEngine;
+        mechanism-&gt;fPlugin = plugin;
+        mechanism-&gt;fStopAdminLogin = (strcmp(mechanismId, "StopAdminLogin") == 0);
+        mechanism-&gt;fLogHappenings = (strcmp(mechanismId, "LogHappenings") == 0);
+    }
+    
+    *outMechanism = mechanism;
+    
+    assert( (err == noErr) == (*outMechanism != NULL) );
+    
+    return err;
+
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>529F6835-205B-461C-84F8-FBFC7CA26850</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MechanismCreate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AuthPluginMechanismCreate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

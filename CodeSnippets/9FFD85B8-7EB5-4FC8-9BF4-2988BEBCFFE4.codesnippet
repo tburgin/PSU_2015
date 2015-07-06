@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AuthPlugin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (BOOL) MechanismValid:(const MechanismRecord *)mechanism {
+    return (mechanism != NULL)
+    &amp;&amp; (mechanism-&gt;fMagic == kMechanismMagic)
+    &amp;&amp; (mechanism-&gt;fEngine != NULL)
+    &amp;&amp; (mechanism-&gt;fPlugin != NULL);
+}
+
+- (BOOL) PluginValid:(const PluginRecord *)plugin {
+    return (plugin != NULL)
+    &amp;&amp; (plugin-&gt;fMagic == kPluginMagic)
+    &amp;&amp; (plugin-&gt;fCallbacks != NULL)
+    &amp;&amp; (plugin-&gt;fCallbacks-&gt;version &gt;= kAuthorizationCallbacksVersion);
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9FFD85B8-7EB5-4FC8-9BF4-2988BEBCFFE4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MechanismValid and PluginValid</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AuthPluginVerifyData</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

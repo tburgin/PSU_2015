@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AuthPlugin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>TopLevel</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark
+#pragma mark Entry Point Wrappers
+
+AuthorizationPlugin *authorizationPlugin = nil;
+
+static OSStatus PluginDestroy(AuthorizationPluginRef inPlugin) {
+    return [authorizationPlugin PluginDestroy:inPlugin];
+}
+
+static OSStatus MechanismCreate(AuthorizationPluginRef inPlugin, AuthorizationEngineRef inEngine, AuthorizationMechanismId mechanismId, AuthorizationMechanismRef *outMechanism) {
+    return [authorizationPlugin MechanismCreate:inPlugin EngineRef:inEngine MechanismId:mechanismId MechanismRef:outMechanism];
+}
+
+static OSStatus MechanismInvoke(AuthorizationMechanismRef inMechanism) {
+    return [authorizationPlugin MechanismInvoke:inMechanism];
+}
+
+static OSStatus MechanismDeactivate(AuthorizationMechanismRef inMechanism) {
+    return [authorizationPlugin MechanismDeactivate:inMechanism];
+}
+
+static OSStatus MechanismDestroy(AuthorizationMechanismRef inMechanism) {
+    return [authorizationPlugin MechanismDestroy:inMechanism];
+}
+
+static AuthorizationPluginInterface gPluginInterface = {
+    kAuthorizationPluginInterfaceVersion,
+    &amp;PluginDestroy,
+    &amp;MechanismCreate,
+    &amp;MechanismInvoke,
+    &amp;MechanismDeactivate,
+    &amp;MechanismDestroy
+};
+
+extern OSStatus AuthorizationPluginCreate(const AuthorizationCallbacks *callbacks, AuthorizationPluginRef *outPlugin, const AuthorizationPluginInterface **outPluginInterface) {
+    
+    if (authorizationPlugin == nil) {
+        authorizationPlugin = [[AuthorizationPlugin alloc] init];
+    }
+    
+    return [authorizationPlugin AuthorizationPluginCreate:callbacks PluginRef:outPlugin PluginInterface:outPluginInterface];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>271119ED-4F17-4C1F-BC79-8093327861C5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Entry Point Wrappers</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AuthPluginEntryPointWrappers</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AuthPlugin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassInterfaceMethods</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark ***** Core Data Structures
+
+typedef struct PluginRecord PluginRecord;           // forward decl
+
+#pragma mark *     Mechanism
+
+
+enum {
+    kMechanismMagic = 'Mchn'
+};
+
+
+struct MechanismRecord {
+    OSType                          fMagic;         // must be kMechanismMagic
+    AuthorizationEngineRef          fEngine;
+    const PluginRecord *            fPlugin;
+    Boolean                         fStopAdminLogin;
+    Boolean                         fLogHappenings;
+
+};
+
+typedef struct MechanismRecord MechanismRecord;
+
+/**
+ * MechanismRecord is the per-mechanism data structure.  One of these
+ * is created for each mechanism that's instantiated, and holds all
+ * of the data needed to run that mechanism.  In this trivial example,
+ * that data set is very small.
+ * Mechanisms are single threaded; the code does not have to guard
+ * against multiple threads running inside the mechanism simultaneously.
+ *
+ *  @param mechanism MechanismRecord
+ *
+ *  @return BOOL Value. Is the mech valid
+ */
+- (BOOL) MechanismValid:(const MechanismRecord *)mechanism;
+
+#pragma mark *     Plugin
+
+enum {
+    kPluginMagic = 'PlgN'
+};
+
+
+struct PluginRecord {
+    OSType                          fMagic;         // must be kPluginMagic
+    const AuthorizationCallbacks *  fCallbacks;
+};
+
+/**
+ * PluginRecord is the per-plugin data structure.  As the system only
+ * instantiates a plugin once per plugin host, this information could
+ * just as easily be kept in global variables.  However, just to keep
+ * things tidy, I pushed it all into a single record.
+ *
+ * As a plugin may host multiple mechanism, and there's no guarantee
+ * that these mechanisms won't be running on different threads, data
+ * in this record should be protected from multiple concurrent access.
+ * In my case, however, all of the data is read-only, so I don't need
+ * to do anything special.
+ *
+ *  @param plugin PluginRecord
+ *
+ *  @return BOOL Value. Is the plugin valid
+ */
+- (BOOL) PluginValid:(const PluginRecord *)plugin;
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2BC96FCB-28A8-4CB4-9018-1D38FA8E9DE2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C-Plus-Plus</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>macosx</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Core Data Structures</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AuthPluginCoreDataStructures</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

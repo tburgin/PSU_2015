@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>AuthPlugin</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (OSStatus) MechanismInvoke:(AuthorizationMechanismRef)inMechanism {
+    OSStatus                    err;
+    MechanismRecord *           mechanism;
+    
+    mechanism = (MechanismRecord *) inMechanism;
+    assert([self MechanismValid:mechanism]);
+    
+    
+#pragma mark --StopAdminLogin
+    // Placeholder for StopAdminLogin Mech
+    
+#pragma mark --LogHappenings
+    // Placeholder for LogHappenings Mech
+    
+    err = mechanism-&gt;fPlugin-&gt;fCallbacks-&gt;SetResult(mechanism-&gt;fEngine, kAuthorizationResultAllow);
+    return err;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8F4FDADF-B1A6-4392-9FDF-F0DFBF79E690</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>MechanismInvoke</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>AuthPluginMechanismInvoke</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
