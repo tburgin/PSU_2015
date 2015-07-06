@@ -1,0 +1,335 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D205CEAD1B42E136006FA0ED /* BorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = D205CEA71B42E136006FA0ED /* BorderlessWindow.m */; };
+		D205CEAE1B42E136006FA0ED /* PromptWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D205CEA91B42E136006FA0ED /* PromptWindowController.m */; };
+		D205CEAF1B42E136006FA0ED /* PromptWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D205CEAA1B42E136006FA0ED /* PromptWindowController.xib */; };
+		D205CEB01B42E136006FA0ED /* shallnotpass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D205CEAB1B42E136006FA0ED /* shallnotpass.mp3 */; };
+		D205CEB11B42E136006FA0ED /* you_shall_not_pass.png in Resources */ = {isa = PBXBuildFile; fileRef = D205CEAC1B42E136006FA0ED /* you_shall_not_pass.png */; };
+		D205CEB71B42E31B006FA0ED /* StopAdminLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = D205CEB61B42E31B006FA0ED /* StopAdminLogin.m */; };
+		D205CEBD1B42E5C0006FA0ED /* MechanismHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D205CEBC1B42E5C0006FA0ED /* MechanismHelper.m */; };
+		D29D87FC1B34F12900D2ABC7 /* AuthorizationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = D29D87FB1B34F12900D2ABC7 /* AuthorizationPlugin.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D205CEA61B42E136006FA0ED /* BorderlessWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BorderlessWindow.h; sourceTree = "<group>"; };
+		D205CEA71B42E136006FA0ED /* BorderlessWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BorderlessWindow.m; sourceTree = "<group>"; };
+		D205CEA81B42E136006FA0ED /* PromptWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromptWindowController.h; sourceTree = "<group>"; };
+		D205CEA91B42E136006FA0ED /* PromptWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptWindowController.m; sourceTree = "<group>"; };
+		D205CEAA1B42E136006FA0ED /* PromptWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromptWindowController.xib; sourceTree = "<group>"; };
+		D205CEAB1B42E136006FA0ED /* shallnotpass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shallnotpass.mp3; sourceTree = "<group>"; };
+		D205CEAC1B42E136006FA0ED /* you_shall_not_pass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = you_shall_not_pass.png; sourceTree = "<group>"; };
+		D205CEB51B42E31B006FA0ED /* StopAdminLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StopAdminLogin.h; path = VerifyAuthPlugin/Classes/Mechanisms/StopAdminLogin.h; sourceTree = SOURCE_ROOT; };
+		D205CEB61B42E31B006FA0ED /* StopAdminLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StopAdminLogin.m; path = VerifyAuthPlugin/Classes/Mechanisms/StopAdminLogin.m; sourceTree = SOURCE_ROOT; };
+		D205CEBB1B42E5C0006FA0ED /* MechanismHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MechanismHelper.h; sourceTree = "<group>"; };
+		D205CEBC1B42E5C0006FA0ED /* MechanismHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MechanismHelper.m; sourceTree = "<group>"; };
+		D29D87F01B34F0EB00D2ABC7 /* VerifyAuthPlugin.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerifyAuthPlugin.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29D87F41B34F0EB00D2ABC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D29D87FA1B34F12900D2ABC7 /* AuthorizationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorizationPlugin.h; sourceTree = "<group>"; };
+		D29D87FB1B34F12900D2ABC7 /* AuthorizationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorizationPlugin.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D29D87ED1B34F0EB00D2ABC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D205CEA41B42E136006FA0ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D205CEA51B42E136006FA0ED /* Prompt */,
+			);
+			name = Views;
+			path = ../../../psu/VerifyAuthPlugin/VerifyAuthPlugin/Views;
+			sourceTree = "<group>";
+		};
+		D205CEA51B42E136006FA0ED /* Prompt */ = {
+			isa = PBXGroup;
+			children = (
+				D205CEA61B42E136006FA0ED /* BorderlessWindow.h */,
+				D205CEA71B42E136006FA0ED /* BorderlessWindow.m */,
+				D205CEA81B42E136006FA0ED /* PromptWindowController.h */,
+				D205CEA91B42E136006FA0ED /* PromptWindowController.m */,
+				D205CEAA1B42E136006FA0ED /* PromptWindowController.xib */,
+				D205CEAB1B42E136006FA0ED /* shallnotpass.mp3 */,
+				D205CEAC1B42E136006FA0ED /* you_shall_not_pass.png */,
+			);
+			path = Prompt;
+			sourceTree = "<group>";
+		};
+		D205CEB31B42E2D2006FA0ED /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D205CEB41B42E2D2006FA0ED /* Mechanisms */,
+			);
+			name = Classes;
+			path = ../../../psu/VerifyAuthPlugin/VerifyAuthPlugin/Classes;
+			sourceTree = "<group>";
+		};
+		D205CEB41B42E2D2006FA0ED /* Mechanisms */ = {
+			isa = PBXGroup;
+			children = (
+				D205CEB51B42E31B006FA0ED /* StopAdminLogin.h */,
+				D205CEB61B42E31B006FA0ED /* StopAdminLogin.m */,
+				D205CEBB1B42E5C0006FA0ED /* MechanismHelper.h */,
+				D205CEBC1B42E5C0006FA0ED /* MechanismHelper.m */,
+			);
+			path = Mechanisms;
+			sourceTree = "<group>";
+		};
+		D29D87E71B34F0EA00D2ABC7 = {
+			isa = PBXGroup;
+			children = (
+				D29D87F21B34F0EB00D2ABC7 /* VerifyAuthPlugin */,
+				D29D87F11B34F0EB00D2ABC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D29D87F11B34F0EB00D2ABC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D29D87F01B34F0EB00D2ABC7 /* VerifyAuthPlugin.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D29D87F21B34F0EB00D2ABC7 /* VerifyAuthPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				D29D87FA1B34F12900D2ABC7 /* AuthorizationPlugin.h */,
+				D29D87FB1B34F12900D2ABC7 /* AuthorizationPlugin.m */,
+				D205CEB31B42E2D2006FA0ED /* Classes */,
+				D205CEA41B42E136006FA0ED /* Views */,
+				D29D87F31B34F0EB00D2ABC7 /* Supporting Files */,
+			);
+			path = VerifyAuthPlugin;
+			sourceTree = "<group>";
+		};
+		D29D87F31B34F0EB00D2ABC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D29D87F41B34F0EB00D2ABC7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D29D87EF1B34F0EB00D2ABC7 /* VerifyAuthPlugin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29D87F71B34F0EB00D2ABC7 /* Build configuration list for PBXNativeTarget "VerifyAuthPlugin" */;
+			buildPhases = (
+				D29D87EC1B34F0EB00D2ABC7 /* Sources */,
+				D29D87ED1B34F0EB00D2ABC7 /* Frameworks */,
+				D29D87EE1B34F0EB00D2ABC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VerifyAuthPlugin;
+			productName = VerifyAuthPlugin;
+			productReference = D29D87F01B34F0EB00D2ABC7 /* VerifyAuthPlugin.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D29D87E81B34F0EA00D2ABC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = NIH;
+				TargetAttributes = {
+					D29D87EF1B34F0EB00D2ABC7 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = D29D87EB1B34F0EA00D2ABC7 /* Build configuration list for PBXProject "VerifyAuthPlugin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D29D87E71B34F0EA00D2ABC7;
+			productRefGroup = D29D87F11B34F0EB00D2ABC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D29D87EF1B34F0EB00D2ABC7 /* VerifyAuthPlugin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D29D87EE1B34F0EB00D2ABC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D205CEB01B42E136006FA0ED /* shallnotpass.mp3 in Resources */,
+				D205CEAF1B42E136006FA0ED /* PromptWindowController.xib in Resources */,
+				D205CEB11B42E136006FA0ED /* you_shall_not_pass.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D29D87EC1B34F0EB00D2ABC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D205CEAE1B42E136006FA0ED /* PromptWindowController.m in Sources */,
+				D205CEAD1B42E136006FA0ED /* BorderlessWindow.m in Sources */,
+				D29D87FC1B34F12900D2ABC7 /* AuthorizationPlugin.m in Sources */,
+				D205CEBD1B42E5C0006FA0ED /* MechanismHelper.m in Sources */,
+				D205CEB71B42E31B006FA0ED /* StopAdminLogin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D29D87F51B34F0EB00D2ABC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: NATIONAL INSTITUTE OF MENTAL HEALTH (QZQALU4M8H)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx10.9;
+			};
+			name = Debug;
+		};
+		D29D87F61B34F0EB00D2ABC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: NATIONAL INSTITUTE OF MENTAL HEALTH (QZQALU4M8H)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx10.9;
+			};
+			name = Release;
+		};
+		D29D87F81B34F0EB00D2ABC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VerifyAuthPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D29D87F91B34F0EB00D2ABC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = VerifyAuthPlugin/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D29D87EB1B34F0EA00D2ABC7 /* Build configuration list for PBXProject "VerifyAuthPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29D87F51B34F0EB00D2ABC7 /* Debug */,
+				D29D87F61B34F0EB00D2ABC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29D87F71B34F0EB00D2ABC7 /* Build configuration list for PBXNativeTarget "VerifyAuthPlugin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29D87F81B34F0EB00D2ABC7 /* Debug */,
+				D29D87F91B34F0EB00D2ABC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D29D87E81B34F0EA00D2ABC7 /* Project object */;
+}
